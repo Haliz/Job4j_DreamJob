@@ -3,6 +3,7 @@ package ru.job4j.dreamjob.store;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.model.Post;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,9 +15,9 @@ public class CandidateStore {
     private final Map<Integer, Candidate> candidates = new ConcurrentHashMap<>();
 
     private CandidateStore() {
-        candidates.put(1, new Candidate(1, "Трус"));
-        candidates.put(2, new Candidate(2, "Балбес"));
-        candidates.put(3, new Candidate(3, "Бывалый"));
+        candidates.put(1, new Candidate(1, "Трус", "Описание Труса", LocalDateTime.now()));
+        candidates.put(2, new Candidate(2, "Балбес", "Описание Балбеса", LocalDateTime.now()));
+        candidates.put(3, new Candidate(3, "Бывалый", "Описание Бывалого", LocalDateTime.now()));
     }
 
     public static CandidateStore instOf() {
